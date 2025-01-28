@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QFormLayout, QGridLayout, QGroupBox
     QLabel, QLineEdit, QPushButton, QSizePolicy,
     QSpacerItem, QWidget)
 
-from .icons import icons_rc
+from UI.icons import icons_rc
 
 class Ui_w_loginform(object):
     def setupUi(self, w_loginform):
@@ -32,18 +32,9 @@ class Ui_w_loginform(object):
         w_loginform.setFont(font)
         self.gridLayout = QGridLayout(w_loginform)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.label_message = QLabel(w_loginform)
-        self.label_message.setObjectName(u"label_message")
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.gridLayout.addWidget(self.label_message, 3, 0, 1, 2)
-
-        self.pushButton_cancel = QPushButton(w_loginform)
-        self.pushButton_cancel.setObjectName(u"pushButton_cancel")
-        icon = QIcon()
-        icon.addFile(u":/Buttons/\u274c.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_cancel.setIcon(icon)
-
-        self.gridLayout.addWidget(self.pushButton_cancel, 2, 1, 1, 1)
+        self.gridLayout.addItem(self.verticalSpacer, 1, 0, 1, 2)
 
         self.groupBox = QGroupBox(w_loginform)
         self.groupBox.setObjectName(u"groupBox")
@@ -82,17 +73,26 @@ class Ui_w_loginform(object):
 
         self.gridLayout.addWidget(self.groupBox, 0, 0, 1, 2)
 
+        self.label_message = QLabel(w_loginform)
+        self.label_message.setObjectName(u"label_message")
+
+        self.gridLayout.addWidget(self.label_message, 5, 0, 1, 2)
+
+        self.pushButton_cancel = QPushButton(w_loginform)
+        self.pushButton_cancel.setObjectName(u"pushButton_cancel")
+        icon = QIcon()
+        icon.addFile(u":/Buttons/\u274c.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_cancel.setIcon(icon)
+
+        self.gridLayout.addWidget(self.pushButton_cancel, 3, 0, 1, 1)
+
         self.pushButton_ok = QPushButton(w_loginform)
         self.pushButton_ok.setObjectName(u"pushButton_ok")
         icon1 = QIcon()
         icon1.addFile(u":/Buttons/\u2714.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_ok.setIcon(icon1)
 
-        self.gridLayout.addWidget(self.pushButton_ok, 2, 0, 1, 1)
-
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout.addItem(self.verticalSpacer, 1, 0, 1, 2)
+        self.gridLayout.addWidget(self.pushButton_ok, 3, 1, 1, 1)
 
 
         self.retranslateUi(w_loginform)
@@ -102,11 +102,11 @@ class Ui_w_loginform(object):
 
     def retranslateUi(self, w_loginform):
         w_loginform.setWindowTitle(QCoreApplication.translate("w_loginform", u"SAMPLE APP", None))
-        self.label_message.setText("")
-        self.pushButton_cancel.setText(QCoreApplication.translate("w_loginform", u"CANCEL", None))
         self.groupBox.setTitle(QCoreApplication.translate("w_loginform", u"Welcome to Login", None))
         self.label_userid.setText(QCoreApplication.translate("w_loginform", u"USER ID", None))
         self.label_password.setText(QCoreApplication.translate("w_loginform", u"PASSWORD", None))
+        self.label_message.setText("")
+        self.pushButton_cancel.setText(QCoreApplication.translate("w_loginform", u"CANCEL", None))
         self.pushButton_ok.setText(QCoreApplication.translate("w_loginform", u"OK", None))
     # retranslateUi
 
