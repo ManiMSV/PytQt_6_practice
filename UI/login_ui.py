@@ -67,6 +67,7 @@ class Ui_w_loginform(object):
 
         self.lineedit_password = QLineEdit(self.groupBox)
         self.lineedit_password.setObjectName(u"lineedit_password")
+        self.lineedit_password.setEchoMode(QLineEdit.Password)
 
         self.formLayout.setWidget(1, QFormLayout.FieldRole, self.lineedit_password)
 

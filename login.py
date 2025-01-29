@@ -5,6 +5,7 @@ from PySide6 import QtCore as qtc, QtWidgets as qtw, QtGui as qtg
 from UI.login_ui import Ui_w_loginform
 
 class login_form(qtw.QWidget, Ui_w_loginform):
+    login_suceess = qtc.Signal()
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -17,7 +18,10 @@ class login_form(qtw.QWidget, Ui_w_loginform):
         password = self.lineedit_password.text()
 
         if username == "Manikandan" and password == "Mani2503@":
+            self.login_suceess.emit()
             self.label_message.setText("Login Successful")
+            self.close()
+            
         else:
             self.label_message.setText("Login Failed")
 
