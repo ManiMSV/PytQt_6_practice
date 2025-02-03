@@ -8,6 +8,7 @@ class add_person(qtw.QDialog, Ui_d_persons):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.gb_persons.setTitle("Add Person")
         self.pb_close.clicked.connect(self.reject)
         self.pb_submit.clicked.connect(self.process_entry)
 
