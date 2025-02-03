@@ -18,7 +18,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QFormLayout, QGridLayout, QGroupBox,
     QLabel, QLineEdit, QPushButton, QSizePolicy,
     QSpacerItem, QWidget)
-import icons_rc
+
+from .icons import icons_rc
 
 class Ui_w_loginform(object):
     def setupUi(self, w_loginform):
