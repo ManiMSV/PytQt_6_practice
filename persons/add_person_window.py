@@ -13,11 +13,12 @@ class add_person(qtw.QDialog, Ui_d_persons):
 
     @qtc.Slot()
     def process_entry(self):
-        firstname = self.lineEdit_firstname.text()
-        lastname = self.lineEdit_lastname.text()
+        self.lineEdit_firstname.text()
+        self.lineEdit_lastname.text()
+        self.lineEdit_firstname.setFocus()
         self.label_message.setText("Person Added Successfully")
         self.lineEdit_firstname.clear()
-        self.lineEdit_lastname.clear()
+        self.lineEdit_lastname.clear() 
 
 if __name__ == "__main__":
     app = qtw.QApplication(sys.argv)
